@@ -9,18 +9,23 @@ class ShoeListViewModel : ViewModel() {
 
     //private lateinit var shoeList: MutableList<Shoe>
 
-    private val _shoeList = MutableLiveData<MutableList<Shoe>>()
-    val shoeList : LiveData<MutableList<Shoe>>
-        get() = _shoeList
+    private val shoeList = mutableListOf<Shoe>()
+    private val _shoeData = MutableLiveData<List<Shoe>>()
+    val shoeData : LiveData<List<Shoe>>
+        get() = _shoeData
 
     init {
-        _shoeList.value = mutableListOf(
-            Shoe("AF1", 10.0, "Nike", "Sneakers", listOf("","")),
-            Shoe("Sketchers", 9.0, "Sketchers", "Sneakers", listOf("","")),
-            Shoe("New Balance", 12.5, "New Balance", "Running Shoes", listOf("","")),
-            Shoe("Rebok", 11.0, "Rebok", "Running Shoes", listOf("",""))
-        )
+        addShoe(Shoe("AF1", 10.0, "Nike", "Sneakers", listOf("","")))
+        addShoe(Shoe("Sketchers", 9.0, "Sketchers", "Sneakers", listOf("","")))
+        addShoe(Shoe("New Balance", 12.5, "New Balance", "Running Shoes", listOf("","")))
+        addShoe(Shoe("Rebok", 11.0, "Rebok", "Running Shoes", listOf("","")))
 
+        _shoeData.value = shoeList
+    }
+
+    fun addShoe(shoe: Shoe) {
+        shoeList.add(shoe)
+        _shoeData.value = shoeList
     }
 
 }

@@ -22,11 +22,12 @@
             android:orientation="vertical"
             android:translationY="100dp">
 
-            <Button
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/create_shoe_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/create_shoe_text" />
+                android:text="@string/create_shoe_text"
+                android:contentDescription="TODO" />
         </LinearLayout>
     </ScrollView>
 </layout>

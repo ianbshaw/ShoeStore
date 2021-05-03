@@ -29,16 +29,22 @@ class ShoeDetailFragment : Fragment() {
 
       //  binding.shoeListViewModel = viewModel
 
+
+
         binding.cancelButton.setOnClickListener {
             findNavController().navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment())
         }
 
         binding.saveButton.setOnClickListener {
-            viewModel.shoeList.value?.add(
-                Shoe(binding.shoeNameText.toString(), binding.shoeSizeText.toString().toDouble(),
-                    binding.companyText.toString(), binding.descText.toString(), listOf("")))
+            val shoeName = binding.shoeNameText.text.toString()
+            val shoeSize = binding.shoeSizeText.text.toString().toDouble()
+            val company = binding.companyText.text.toString()
+            val desc = binding.descText.text.toString()
+            viewModel.addShoe(Shoe(shoeName, shoeSize, company, desc, listOf("")))
             findNavController().navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment())
         }
+
+        binding.setLifecycleOwner (this)
 
         return binding.root
     }
