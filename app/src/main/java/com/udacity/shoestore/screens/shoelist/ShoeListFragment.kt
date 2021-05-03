@@ -45,13 +45,6 @@ class ShoeListFragment : Fragment() {
             }
         })
 
-//        for (i in viewModel.shoeData.value!!) {
-//            val textView = TextView(context)
-//            textView.text = i.name
-//            textView.layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
-//            binding.shoeListFragment.mainLayout.addView(textView)
-//        }
-
         binding.setLifecycleOwner(this)
 
         setHasOptionsMenu(true)

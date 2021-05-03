@@ -29,15 +29,24 @@ class ShoeDetailFragment : Fragment() {
         binding.shoe = viewModel.shoe.value
 
         binding.cancelButton.setOnClickListener {
+            viewModel.addShoe(binding.shoe!!)
+            viewModel.shoe.value?.name = ""
+            viewModel.shoe.value?.size = -1.0
+            viewModel.shoe.value?.company = ""
+            viewModel.shoe.value?.description = ""
             findNavController().navigateUp()
         }
 
         binding.saveButton.setOnClickListener {
             viewModel.addShoe(binding.shoe!!)
+            binding.shoe!!.name = ""
+            binding.shoe!!.size = -1.0
+            binding.shoe!!.company = ""
+            binding.shoe!!.description = ""
             findNavController().navigateUp()
         }
 
-        binding.setLifecycleOwner (this)
+        binding.lifecycleOwner = this
 
         return binding.root
     }
