@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -18,6 +19,7 @@ import com.udacity.shoestore.databinding.FragmentShoeListBinding
 import com.udacity.shoestore.models.Shoe
 import kotlinx.android.synthetic.main.fragment_shoe_list.*
 import kotlinx.android.synthetic.main.fragment_shoe_list.view.*
+import java.util.*
 
 class ShoeListFragment : Fragment() {
 
@@ -45,7 +47,7 @@ class ShoeListFragment : Fragment() {
             }
         })
 
-        binding.setLifecycleOwner(this)
+        binding.lifecycleOwner = this
 
         setHasOptionsMenu(true)
 
@@ -58,8 +60,8 @@ class ShoeListFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
-                || super.onOptionsItemSelected(item)
+        findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToLoginFragment())
+        return super.onOptionsItemSelected(item)
     }
 
 }

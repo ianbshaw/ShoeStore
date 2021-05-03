@@ -5,10 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.FragmentManager
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.LoginBinding
+import kotlinx.android.synthetic.main.login.*
 
 
 class LoginFragment : Fragment() {
@@ -26,7 +29,9 @@ class LoginFragment : Fragment() {
         binding.signinButton.setOnClickListener {
             findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
         }
+
         // Inflate the layout for this fragment
         return binding.root
     }
+
 }
