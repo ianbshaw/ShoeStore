@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!--    This layout way used so that the few fields could be laid out with relative distance-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/loginFragment"
         android:layout_width="match_parent"

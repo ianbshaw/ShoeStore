@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-        <variable
-            name="shoeListViewModel"
-            type="com.udacity.shoestore.screens.shoelist.ShoeListViewModel" />
-    </data>
-
+    <!--    This layout way used as a part of the rubric and to give an easy way of scrolling through multiple items-->
     <ScrollView
         android:id="@+id/shoe_list_Fragment"
         android:layout_width="match_parent"

@@ -25,23 +25,16 @@ class ShoeDetailFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_detail, container, false)
 
-        //viewModel = ViewModelProvider(this).get(ShoeListViewModel::class.java)
-
-      //  binding.shoeListViewModel = viewModel
-
-
+        binding.shoeListViewModel = viewModel
+        binding.shoe = viewModel.shoe.value
 
         binding.cancelButton.setOnClickListener {
-            findNavController().navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment())
+            findNavController().navigateUp()
         }
 
         binding.saveButton.setOnClickListener {
-            val shoeName = binding.shoeNameText.text.toString()
-            val shoeSize = binding.shoeSizeText.text.toString().toDouble()
-            val company = binding.companyText.text.toString()
-            val desc = binding.descText.text.toString()
-            viewModel.addShoe(Shoe(shoeName, shoeSize, company, desc, listOf("")))
-            findNavController().navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment())
+            viewModel.addShoe(binding.shoe!!)
+            findNavController().navigateUp()
         }
 
         binding.setLifecycleOwner (this)
