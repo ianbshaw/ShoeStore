@@ -3,6 +3,7 @@
     <string name="email_text">E-Mail</string>
     <string name="password_text">Password</string>
     <string name="create_text">Create Account</string>
+    <string name="create_shoe">Create Shoe</string>
     <string name="signin_text">Sign In</string>
     <string name="next_text">Next</string>
     <string name="welcome_text">Welcome</string>

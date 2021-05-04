@@ -42,7 +42,8 @@ class ShoeListFragment : Fragment() {
             for (i in shoes) {
                 val textView = TextView(context)
                 textView.text = i.name
-                textView.layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
+                textView.layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                        ViewGroup.LayoutParams.MATCH_PARENT)
                 binding.shoeListFragment.mainLayout.addView(textView)
             }
         })
