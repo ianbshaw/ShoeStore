@@ -16,10 +16,10 @@ class ShoeListViewModel : ViewModel() {
 
 
     init {
-        addShoe(Shoe("AF1", 10.0, "Nike", "Sneakers", listOf("","")))
-        addShoe(Shoe("Sketchers", 9.0, "Sketchers", "Sneakers", listOf("","")))
-        addShoe(Shoe("New Balance", 12.5, "New Balance", "Running Shoes", listOf("","")))
-        addShoe(Shoe("Rebok", 11.0, "Rebok", "Running Shoes", listOf("","")))
+        addShoe(Shoe("AF1", 10.0, "Nike", "Sneakers", emptyList()))
+        addShoe(Shoe("Sketchers", 9.0, "Sketchers", "Sneakers", emptyList()))
+        addShoe(Shoe("New Balance", 12.5, "New Balance", "Running Shoes", emptyList()))
+        addShoe(Shoe("Rebok", 11.0, "Rebok", "Running Shoes", emptyList()))
 
         _shoeData.value = shoeList
     }
