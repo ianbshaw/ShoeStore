@@ -29,7 +29,6 @@ class ShoeDetailFragment : Fragment() {
         binding.shoe = viewModel.shoe.value
 
         binding.cancelButton.setOnClickListener {
-            viewModel.addShoe(binding.shoe!!)
             viewModel.shoe.value?.name = ""
             viewModel.shoe.value?.size = -1.0
             viewModel.shoe.value?.company = ""
