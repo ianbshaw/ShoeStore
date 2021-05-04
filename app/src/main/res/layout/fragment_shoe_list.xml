@@ -7,6 +7,7 @@
         android:id="@+id/shoe_list_Fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginLeft="150dp"
         tools:context=".screens.shoelist.ShoeListFragment">
 
         <LinearLayout
@@ -20,8 +21,9 @@
                 android:id="@+id/create_shoe_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/create_shoe_text"
-                android:contentDescription="TODO" />
+                android:layout_marginBottom="25dp"
+                android:contentDescription="TODO"
+                android:text="@string/create_shoe_text" />
         </LinearLayout>
     </ScrollView>
 </layout>
